@@ -1,17 +1,16 @@
 import React from "react";
 import Stats from "./stats/Stats";
-import styles from "./Profile.module.css";
-
-console.log(styles);
+import s from "./Profile.module.css";
+import PropTypes from "prop-types";
 
 const Profile = ({ avatar, tag, location, name, stats }) => {
   return (
-    <div className={styles.profile}>
-      <div className={styles.description}>
-        <img src={avatar} alt={name} className={styles.avatar} />
-        <p className={styles.name}>{name}</p>
-        <p className={styles.tag}>{tag}</p>
-        <p className={styles.location}>{location}</p>
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img src={avatar} alt={name} className={s.avatar} />
+        <p className={s.name}>{name}</p>
+        <p className={s.tag}>{tag}</p>
+        <p className={s.location}>{location}</p>
       </div>
       <Stats
         followers={stats.followers}
@@ -20,6 +19,18 @@ const Profile = ({ avatar, tag, location, name, stats }) => {
       />
     </div>
   );
+};
+
+Profile.defaultProps = {
+  tag: "slacker",
+};
+
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  tag: PropTypes.string,
+  location: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
 };
 
 export default Profile;

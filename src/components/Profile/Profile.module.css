@@ -3,9 +3,7 @@
   margin: 0 auto;
   margin-top: 150px;
   background-color: rgb(252, 249, 249);
-  border: 1px solid rgb(238, 233, 233);
-
-  box-shadow: 0 0 1.5px 1.5px rgb(224, 223, 223);
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(224, 223, 223);
 }
 
 .description {

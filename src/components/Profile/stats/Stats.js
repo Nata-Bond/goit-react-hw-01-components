@@ -1,24 +1,31 @@
 import React from "react";
 
-import styles from "./Stats.module.css";
+import s from "./Stats.module.css";
+import PropTypes from "prop-types";
 
 const Stats = ({ followers, views, likes }) => {
   return (
-    <ul className={styles.stats}>
-      <li className={styles.statsItem}>
-        <span className={styles.label}>Followers</span>
-        <span className={styles.quantity}>{followers}</span>
+    <ul className={s.stats}>
+      <li className={s.statsItem}>
+        <span className={s.label}>Followers</span>
+        <span className={s.quantity}>{followers}</span>
       </li>
-      <li className={styles.statsItem}>
-        <span className={styles.label}>Views</span>
-        <span className={styles.quantity}>{views}</span>
+      <li className={s.statsItem}>
+        <span className={s.label}>Views</span>
+        <span className={s.quantity}>{views}</span>
       </li>
-      <li className={styles.statsItem}>
-        <span className={styles.label}>Likes</span>
-        <span className={styles.quantity}>{likes}</span>
+      <li className={s.statsItem}>
+        <span className={s.label}>Likes</span>
+        <span className={s.quantity}>{likes}</span>
       </li>
     </ul>
   );
+};
+
+Stats.propTypes = {
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };
 
 export default Stats;
