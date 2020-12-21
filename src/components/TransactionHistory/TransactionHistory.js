@@ -22,7 +22,7 @@ const TransactionHistory = ({ items }) => {
           //   } else {
           //     trStyle = s.tdWhite;
           //   }
-          let trStyle = index % 2 ? s.tdGray : s.tdWhite;
+          const trStyle = index % 2 === 0 ? s.tdGray : s.tdWhite;
           return (
             <tr className={trStyle} key={item.id}>
               <td>{item.type}</td>
